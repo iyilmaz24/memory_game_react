@@ -13,11 +13,16 @@ function Gallery() {
     
     // have useEffect hook fetch current stock price every render
     useEffect(() => {
-        fetch("https://finnhub.io/api/v1/quote?symbol=RACE&token=cm8dp0hr01qi5ocv5u0gcm8dp0hr01qi5ocv5u10").then(
-            res => res.json())
-            .then(
-                (response) => {setFerarriStock('$' + response.c)}).
-        catch((err) => {console.log(err); setFerarriStock("Loading...")})
+        const getStockPrice = () => {
+            fetch("https://finnhub.io/api/v1/quote?symbol=RACE&token=").then(
+                (res) => {
+                    if(!res.ok){throw new Error};
+                    return res.json();
+                }).then((data) => {setFerarriStock("$" + data.c)}).
+            catch(error => console.log(error))
+        }
+        getStockPrice();
+
     }, [])
 
     return (

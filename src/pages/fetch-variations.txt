@@ -1,0 +1,59 @@
+    
+const [ferrariStock, setFerarriStock] = useState('Loading...');
+    
+
+DEFAULT VANILLA PATTERN:
+
+    // have useEffect hook fetch current stock price every render
+    useEffect(() => {
+        fetch("https://finnhub.io/api/v1/quote?symbol=RACE&token=").then(
+            res => { if(res.ok){return res.json()}
+                else{throw new Error}})
+            .then(
+                (response) => {setFerarriStock('$' + response.c)}).
+        catch((err) => {console.log(err); setFerarriStock("Loading...")})
+    }, [])
+
+
+INNER FUNCTION VANILLA PATTERN:
+
+    // have useEffect hook fetch current stock price on mount
+    useEffect(() => {
+        const innerFunction = async () => {
+            let data = await fetch("https://finnhub.io/api/v1/quote?symbol=RACE&token=").
+                then((res) => {if(!res.ok){throw new Error}
+                return res.json()
+                }).catch((error) => {console.log(error)})
+
+            if(data){
+                setFerarriStock('$' + data.c)
+            }
+        }
+        innerFunction();
+    })
+
+
+TRY-CATCH VANILLA PATTERN:
+
+    // have useEffect hook fetch current stock price every render
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const response = await fetch("https://finnhub.io/api/v1/quote?symbol=RACE&token=")
+                
+                if(!response.ok){
+                    throw new Error} 
+                let data = await response.json();
+
+                if(data){
+                    setFerarriStock('$' + data.c)
+                }
+            }
+            catch(error) {
+                console.log(error)
+            } finally {
+                console.log("End of HTTP Request") }
+        }
+        getData();
+
+    }, [])
