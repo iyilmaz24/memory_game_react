@@ -5,7 +5,7 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 
-  <div className='bg-stone-100 w-screen h-screen'>
+  <div className='bg-slate-200 w-screen h-screen'>
 
     <React.StrictMode>
       <App />

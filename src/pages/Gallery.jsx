@@ -4,7 +4,7 @@ import {
     Divider,
   } from '@chakra-ui/react';
 import ferarriLogo from '../assets/ferarri-logo.svg';
-
+import { Image, Paper, Text } from '@mantine/core';
 
 function Gallery() {
 
@@ -45,24 +45,35 @@ function Gallery() {
 
     return (
     <>
+    <div className="w-screen h-screen flex flex-col place-content-evenly">
 
-    <div className="bg-neutral-200 flex justify-center items-center w-screen h-36 gap-24" >
-       
-        <img className="w-24 h-28" src={ferarriLogo} alt="Ferarri Logo" />
+        <Paper className="flex justify-center items-center w-3/4 h-36 gap-24 place-self-center">
+            <Image className="w-20 h-24" radius='md' src={ferarriLogo} alt="Ferarri Logo" />
+            
+            <Divider height='5.5rem' orientation='vertical' borderColor={'black'} />
+            <StatGroup>
+                <Stat>
+                    <StatLabel>NYSE: RACE</StatLabel>
+                    <StatNumber>{ferrariStock}</StatNumber>
+                    <StatHelpText>
+                    <StatArrow type={(positiveChange) ? 'increase' : 'decrease'} />
+                        {stockPercentChange}
+                    </StatHelpText>
+                </Stat>
+            </StatGroup>
+        </Paper>
 
-        <Divider height='5.5rem' orientation='vertical' borderColor={'black'} />
-        <StatGroup>
-            <Stat>
-                <StatLabel>NYSE: RACE</StatLabel>
-                <StatNumber>{ferrariStock}</StatNumber>
-                <StatHelpText>
-                <StatArrow type={(positiveChange) ? 'increase' : 'decrease'} />
-                    {stockPercentChange}
-                </StatHelpText>
-            </Stat>
-        </StatGroup>
+        <Paper className="w-3/5 place-self-center" shadow="xs" p="xl">
+            <Text>Paper is the most basic ui component</Text>
+            <Text>
+                Use it to create cards, dropdowns, modals and other components that require background
+                with shadow
+            </Text>
+        </Paper>
 
     </div>
+
+
 
     </>
     )
