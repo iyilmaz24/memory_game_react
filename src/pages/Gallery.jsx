@@ -46,9 +46,10 @@ function Gallery() {
     return (
     <>
 
-    <div style={ { marginTop:'2rem', height:'fit-content', width:'100%', display:'flex', justifyContent:'center', alignItems:'center', gap:'6rem'} }>
+    <div className="bg-neutral-200 flex justify-center items-center w-screen h-36 gap-24" >
        
-        <img style={ { height:'7rem', width:'5.5rem'} } src={ferarriLogo} alt="Ferarri Logo" />
+        <img className="w-24 h-28" src={ferarriLogo} alt="Ferarri Logo" />
+
         <Divider height='5.5rem' orientation='vertical' borderColor={'black'} />
         <StatGroup>
             <Stat>
