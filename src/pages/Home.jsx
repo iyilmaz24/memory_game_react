@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-
 function Home() {
 
     // have instructions and a start button here for the game
@@ -14,17 +13,16 @@ function Home() {
 
     return (
     <>
-    
-        <div>Home.jsx</div>
 
-        <Link to="gallery">
-            <button>Gallery</button>    
-        </Link>
+            <div>Home.jsx</div>
 
-        <Link to="about"k>
-            <button>About</button>
-        </Link>
+            <Link to="gallery">
+                <button>Gallery</button>    
+            </Link>
 
+            <Link to="about"k>
+                <button>About</button>
+            </Link>
 
     </>
     )
