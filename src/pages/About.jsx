@@ -1,5 +1,7 @@
 import '@radix-ui/themes/styles.css';
 import { Theme, Tabs, Text, Box } from '@radix-ui/themes';
+import NavButtons from "../components/NavButtons";
+
 
 function About() {
 
@@ -52,9 +54,7 @@ function About() {
                 </Tabs.Root>
             </div>
 
-            <div>
-                2 Buttons to go home and gallery
-            </div>
+            <NavButtons currPage='about' />
 
         </Theme>
 

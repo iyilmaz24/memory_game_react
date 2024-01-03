@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from "react";
 import {
     Stat, StatLabel, StatNumber, StatHelpText, StatArrow, StatGroup,
@@ -5,6 +6,7 @@ import {
   } from '@chakra-ui/react';
 import ferarriLogo from '../assets/ferarri-logo.svg';
 import { Image, Paper, Text } from '@mantine/core';
+import NavButtons from "../components/NavButtons";
 
 function Gallery() {
 
@@ -45,9 +47,12 @@ function Gallery() {
 
     return (
     <>
-    <div className="w-screen h-screen flex flex-col place-content-evenly">
 
-        <Paper className="flex justify-center items-center w-3/4 h-36 gap-24 place-self-center">
+    <div className="w-screen h-screen flex flex-col place-content-evenly overflow-scroll">
+
+        <NavButtons currPage='gallery' />
+
+        <Paper className="flex justify-center items-center w-3/4 h-36 gap-24 place-self-center" shadow="xs" p="xl">
             <Image className="w-20 h-24" radius='md' src={ferarriLogo} alt="Ferarri Logo" />
             
             <Divider height='5.5rem' orientation='vertical' borderColor={'black'} />
@@ -63,13 +68,27 @@ function Gallery() {
             </StatGroup>
         </Paper>
 
-        <Paper className="w-3/5 place-self-center" shadow="xs" p="xl">
-            <Text>Paper is the most basic ui component</Text>
-            <Text>
-                Use it to create cards, dropdowns, modals and other components that require background
-                with shadow
-            </Text>
-        </Paper>
+        <div className="flex justify-evenly">
+            <Paper className="w-2/5" shadow="xs" p="xl">
+                <Text>
+                Ferrari is an iconic Italian luxury sports car manufacturer founded in 1939 by Enzo Ferrari. 
+                Renowned for its high-performance vehicles, the brand is synonymous with speed, elegance, and 
+                exclusivity. With a distinctive prancing horse logo, Ferrari is celebrated for powerful engines, 
+                cutting-edge technology, and success in Formula One racing.
+                </Text>
+            </Paper>
+
+            <Paper className="w-2/5" shadow="xs" p="xl">
+                <Text>
+                Ferrari's prancing horse logo was inspired by a World War I fighter pilot's symbol for good luck, and 
+                it has since become an iconic emblem of the brand. Ferrari's trademark color, Rosso Corsa, or 
+                Racing Red, was chosen to represent Italy in international motorsports. 
+                The bold red hue has since become synonymous with Ferrari's racing heritage.
+                </Text>
+            </Paper>
+        </div>
+
+
 
     </div>
 

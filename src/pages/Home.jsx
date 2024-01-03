@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import NavButtons from "../components/NavButtons";
+
 
 function Home() {
 
@@ -14,15 +15,9 @@ function Home() {
     return (
     <>
 
-            <div>Home.jsx</div>
+        <NavButtons currPage='home' />
 
-            <Link to="gallery">
-                <button>Gallery</button>    
-            </Link>
-
-            <Link to="about"k>
-                <button>About</button>
-            </Link>
+        <div>Home.jsx</div>
 
     </>
     )
