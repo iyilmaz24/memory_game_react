@@ -15,9 +15,9 @@ function Home() {
     return (
     <>
 
-        <NavButtons currPage='home' />
-
         <div>Home.jsx</div>
+
+        <NavButtons currPage='home' />
 
     </>
     )

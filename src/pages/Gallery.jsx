@@ -48,11 +48,9 @@ function Gallery() {
     return (
     <>
 
-    <div className="w-screen h-screen flex flex-col place-content-evenly overflow-scroll">
+    <div className="w-screen min-h-full flex flex-col place-content-evenly overflow-scroll p-4 gap-8">
 
-        <NavButtons currPage='gallery' />
-
-        <Paper className="flex justify-center items-center w-3/4 h-36 gap-24 place-self-center" shadow="xs" p="xl">
+        <Paper className="flex justify-center items-center w-3/4 h-36 gap-20 place-self-center" shadow="xs" p="xl">
             <Image className="w-20 h-24" radius='md' src={ferarriLogo} alt="Ferarri Logo" />
             
             <Divider height='5.5rem' orientation='vertical' borderColor={'black'} />
@@ -66,10 +64,11 @@ function Gallery() {
                     </StatHelpText>
                 </Stat>
             </StatGroup>
+
         </Paper>
 
-        <div className="flex justify-evenly">
-            <Paper className="w-2/5" shadow="xs" p="xl">
+        <div className="flex flex-col w-screen place-items-center gap-4">
+            <Paper className="w-3/5" shadow="xs" p="xl">
                 <Text>
                 Ferrari is an iconic Italian luxury sports car manufacturer founded in 1939 by Enzo Ferrari. 
                 Renowned for its high-performance vehicles, the brand is synonymous with speed, elegance, and 
@@ -78,7 +77,7 @@ function Gallery() {
                 </Text>
             </Paper>
 
-            <Paper className="w-2/5" shadow="xs" p="xl">
+            <Paper className="w-3/5" shadow="xs" p="xl">
                 <Text>
                 Ferrari's prancing horse logo was inspired by a World War I fighter pilot's symbol for good luck, and 
                 it has since become an iconic emblem of the brand. Ferrari's trademark color, Rosso Corsa, or 
@@ -88,7 +87,7 @@ function Gallery() {
             </Paper>
         </div>
 
-
+        <NavButtons currPage='gallery' />
 
     </div>
 
